@@ -908,7 +908,7 @@ namespace Ical.Net.Evaluation
             IDateTime newDt = new CalDateTime(dt, referenceDate.TzId);
 
             // NOTE: fixes bug #2938007 - hasTime missing
-            newDt.HasTime = referenceDate.HasTime;
+            //newDt.HasTime = referenceDate.HasTime;
 
             newDt.AssociateWith(referenceDate);
 

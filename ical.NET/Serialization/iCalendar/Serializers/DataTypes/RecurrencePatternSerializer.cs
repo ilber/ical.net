@@ -143,7 +143,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
                 if (serializer != null)
                 {
                     IDateTime until = new CalDateTime(recur.Until);
-                    until.HasTime = true;
+                    //until.HasTime = true;
                     values.Add("UNTIL=" + serializer.SerializeToString(until));
                 }
             }

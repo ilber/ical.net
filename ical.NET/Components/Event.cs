@@ -120,19 +120,20 @@ namespace Ical.Net
         /// </summary>
         public virtual bool IsAllDay
         {
+            //ToDo: Rethink this?
             get { return !Start.HasTime; }
             set
             {
-                // Set whether or not the start date/time
-                // has a time value.
-                if (Start != null)
-                {
-                    Start.HasTime = !value;
-                }
-                if (End != null)
-                {
-                    End.HasTime = !value;
-                }
+                //// Set whether or not the start date/time
+                //// has a time value.
+                //if (Start != null)
+                //{
+                //    Start.HasTime = !value;
+                //}
+                //if (End != null)
+                //{
+                //    End.HasTime = !value;
+                //}
 
                 if (value && Start != null && End != null && Equals(Start.Date, End.Date))
                 {

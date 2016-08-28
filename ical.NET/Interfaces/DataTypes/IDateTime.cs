@@ -41,7 +41,7 @@ namespace Ical.Net.Interfaces.DataTypes
         /// <summary>
         /// Gets/sets whether or not this date/time value contains a 'time' part.
         /// </summary>
-        bool HasTime { get; set; }
+        bool HasTime { get; /*set;*/ }
 
         /// <summary>
         /// Gets/sets the time zone ID for this date/time value.

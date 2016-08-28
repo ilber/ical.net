@@ -31,7 +31,7 @@ namespace Ical.Net.DataTypes
                     Duration = null;
 
                     // Do not allow timeless date/time values
-                    _mDateTime.HasTime = true;
+                    //_mDateTime.HasTime = true;
                 }
             }
         }

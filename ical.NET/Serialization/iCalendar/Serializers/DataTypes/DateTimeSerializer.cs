@@ -116,7 +116,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
                 }
                 if (match.Groups.Count >= 6 && match.Groups[5].Success)
                 {
-                    dt.HasTime = true;
+                    //dt.HasTime = true;
                     hour = Convert.ToInt32(match.Groups[6].Value);
                     minute = Convert.ToInt32(match.Groups[7].Value);
                     second = Convert.ToInt32(match.Groups[8].Value);

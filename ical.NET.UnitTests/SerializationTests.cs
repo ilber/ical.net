@@ -353,6 +353,23 @@ namespace Ical.Net.UnitTests
             var result = new TimeSpanSerializer().SerializeToString(TimeSpan.Zero);
             Assert.IsTrue("P0D".Equals(result, StringComparison.Ordinal));
         }
+
+        [Test]
+        public void HasTime_Test()
+        {
+            var calendar = new Calendar();
+            var e = new Event()
+            {
+                DtStart = new CalDateTime(DateTime.Parse("1/1/2017 7:00:00 PM").ToUniversalTime()),
+                DtEnd = new CalDateTime(DateTime.Parse("1/1/2017 10:00:00 PM").ToUniversalTime()),
+            };
+            calendar.Events.Add(e);
+            Assert.IsTrue(e.DtStart.HasTime);
+            Assert.IsTrue(e.DtEnd.HasTime);
+            var serializer = new CalendarSerializer(new SerializationContext());
+            var serializedCalendar = serializer.SerializeToString(calendar);
+            Assert.IsTrue(serializedCalendar.Contains("VEVENT"));
+        }
         #endregion
     }
 }

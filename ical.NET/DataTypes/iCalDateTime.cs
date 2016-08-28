@@ -23,7 +23,7 @@ namespace Ical.Net.DataTypes
 
         private DateTime _value;
         private bool _hasDate;
-        private bool _hasTime;
+        private bool _hasTime = true;
         private bool _isUniversalTime;
 
         public CalDateTime() {}
@@ -43,19 +43,19 @@ namespace Ical.Net.DataTypes
         public CalDateTime(int year, int month, int day, int hour, int minute, int second)
         {
             Initialize(year, month, day, hour, minute, second, null, null);
-            HasTime = true;
+            //HasTime = true;
         }
 
         public CalDateTime(int year, int month, int day, int hour, int minute, int second, string tzId)
         {
             Initialize(year, month, day, hour, minute, second, tzId, null);
-            HasTime = true;
+            //HasTime = true;
         }
 
         public CalDateTime(int year, int month, int day, int hour, int minute, int second, string tzId, ICalendar cal)
         {
             Initialize(year, month, day, hour, minute, second, tzId, cal);
-            HasTime = true;
+            //HasTime = true;
         }
 
         public CalDateTime(int year, int month, int day) : this(year, month, day, 0, 0, 0) {}
@@ -82,7 +82,7 @@ namespace Ical.Net.DataTypes
             // Convert all incoming values to UTC.
             Value = new DateTime(value.Year, value.Month, value.Day, value.Hour, value.Minute, value.Second, DateTimeKind.Utc);
             HasDate = true;
-            HasTime = value.Second != 0 || value.Minute != 0 || value.Hour != 0;
+            //HasTime = value.Second != 0 || value.Minute != 0 || value.Hour != 0;
             TzId = tzId;
             AssociatedObject = cal;
         }
@@ -328,8 +328,8 @@ namespace Ical.Net.DataTypes
 
         public bool HasTime
         {
-            get { return _hasTime; }
-            set { _hasTime = value; }
+            get { return true; }
+            //set { /*_hasTime = value;*/ }
         }
 
         private string _tzId = string.Empty;
@@ -436,10 +436,10 @@ namespace Ical.Net.DataTypes
         public IDateTime AddHours(int hours)
         {
             var dt = Copy<IDateTime>();
-            if (!dt.HasTime && hours % 24 > 0)
-            {
-                dt.HasTime = true;
-            }
+            //if (!dt.HasTime && hours % 24 > 0)
+            //{
+            //    //dt.HasTime = true;
+            //}
             dt.Value = Value.AddHours(hours);
             return dt;
         }
@@ -447,10 +447,10 @@ namespace Ical.Net.DataTypes
         public IDateTime AddMinutes(int minutes)
         {
             var dt = Copy<IDateTime>();
-            if (!dt.HasTime && minutes % 1440 > 0)
-            {
-                dt.HasTime = true;
-            }
+            //if (!dt.HasTime && minutes % 1440 > 0)
+            //{
+            //    dt.HasTime = true;
+            //}
             dt.Value = Value.AddMinutes(minutes);
             return dt;
         }
@@ -458,10 +458,10 @@ namespace Ical.Net.DataTypes
         public IDateTime AddSeconds(int seconds)
         {
             var dt = Copy<IDateTime>();
-            if (!dt.HasTime && seconds % 86400 > 0)
-            {
-                dt.HasTime = true;
-            }
+            //if (!dt.HasTime && seconds % 86400 > 0)
+            //{
+            //    dt.HasTime = true;
+            //}
             dt.Value = Value.AddSeconds(seconds);
             return dt;
         }
@@ -469,10 +469,10 @@ namespace Ical.Net.DataTypes
         public IDateTime AddMilliseconds(int milliseconds)
         {
             var dt = Copy<IDateTime>();
-            if (!dt.HasTime && milliseconds % 86400000 > 0)
-            {
-                dt.HasTime = true;
-            }
+            //if (!dt.HasTime && milliseconds % 86400000 > 0)
+            //{
+            //    dt.HasTime = true;
+            //}
             dt.Value = Value.AddMilliseconds(milliseconds);
             return dt;
         }
@@ -480,7 +480,7 @@ namespace Ical.Net.DataTypes
         public IDateTime AddTicks(long ticks)
         {
             var dt = Copy<IDateTime>();
-            dt.HasTime = true;
+            //dt.HasTime = true;
             dt.Value = Value.AddTicks(ticks);
             return dt;
         }
