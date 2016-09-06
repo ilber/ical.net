@@ -18,7 +18,7 @@ using Ical.Net.Utility;
 
 namespace Ical.Net
 {
-    public class Calendar : CalendarComponent, ICalendar, IDisposable
+    public class Calendar : CalendarComponent, ICalendar
     {
         /// <summary>
         /// Loads an <see cref="Calendar"/> from the file system.
@@ -442,11 +442,6 @@ namespace Ical.Net
                 return (T) obj;
             }
             return default(T);
-        }
-
-        public void Dispose()
-        {
-            Children.Clear();
         }
 
         public virtual void MergeWith(IMergeable obj)
