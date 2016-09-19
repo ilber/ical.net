@@ -25,8 +25,6 @@ namespace Ical.Net.Utility
             }
         }
 
-        //private const BindingFlags _bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
-
         private static readonly ConcurrentDictionary<Type, List<MethodInfo>> _onDeserializingMethods = new ConcurrentDictionary<Type, List<MethodInfo>>();
         private static List<MethodInfo> GetDeserializingMethods(Type targetType)
         {
