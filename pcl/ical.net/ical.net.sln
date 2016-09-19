@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ical.net", "ical.net\ical.net.csproj", "{07DC94BF-6B3E-4F22-8722-A8DE7697C123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ical.net.collections", "ical.net.collections\ical.net.collections.csproj", "{19959AFB-4070-460E-B34A-0C07B67EA081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "antlr.runtime", "antlr.runtime\antlr.runtime.csproj", "{41B97917-0F07-4B74-836B-4AF548241FD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ical.net.unittests", "ical.net.unittests\ical.net.unittests.csproj", "{0844DFEB-354F-43EA-A3DF-06D6066DA7B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07DC94BF-6B3E-4F22-8722-A8DE7697C123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DC94BF-6B3E-4F22-8722-A8DE7697C123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DC94BF-6B3E-4F22-8722-A8DE7697C123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DC94BF-6B3E-4F22-8722-A8DE7697C123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19959AFB-4070-460E-B34A-0C07B67EA081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19959AFB-4070-460E-B34A-0C07B67EA081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19959AFB-4070-460E-B34A-0C07B67EA081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19959AFB-4070-460E-B34A-0C07B67EA081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B97917-0F07-4B74-836B-4AF548241FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B97917-0F07-4B74-836B-4AF548241FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B97917-0F07-4B74-836B-4AF548241FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B97917-0F07-4B74-836B-4AF548241FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0844DFEB-354F-43EA-A3DF-06D6066DA7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0844DFEB-354F-43EA-A3DF-06D6066DA7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0844DFEB-354F-43EA-A3DF-06D6066DA7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0844DFEB-354F-43EA-A3DF-06D6066DA7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

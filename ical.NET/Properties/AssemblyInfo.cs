@@ -17,8 +17,8 @@ using System.Security;
 // COM, set the ComVisible attribute to true on that type.
 
 [assembly: ComVisible(false)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: SecurityRules(SecurityRuleSet.Level1)]
+//[assembly: AllowPartiallyTrustedCallers]
+//[assembly: SecurityRules(SecurityRuleSet.Level1)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 

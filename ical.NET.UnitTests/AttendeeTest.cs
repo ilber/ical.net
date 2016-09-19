@@ -37,9 +37,9 @@ namespace Ical.Net.UnitTests
                 Rsvp = true,
                 ParticipationStatus = EventParticipationStatus.Accepted
             }
-        }.AsReadOnly();
+        };
 
-        
+
         /// <summary>
         /// Ensures that attendees can be properly added to an event.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Ical.Net.UnitTests
             Assert.AreEqual(1, evt.Attendees.Count);
 
             //the properties below had been set to null during the Attendees.Add operation in NuGet version 2.1.4
-            Assert.AreEqual(ParticipationRole.RequiredParticipant, evt.Attendees[0].Role); 
+            Assert.AreEqual(ParticipationRole.RequiredParticipant, evt.Attendees[0].Role);
             Assert.AreEqual(EventParticipationStatus.Tentative, evt.Attendees[0].ParticipationStatus);
         }
 
@@ -71,7 +71,6 @@ namespace Ical.Net.UnitTests
             var cal = new Calendar();
             cal.Events.Add(evt);
             var serializer = new CalendarSerializer();
-            Console.Write(serializer.SerializeToString(cal));
         }
 
         /// <summary>

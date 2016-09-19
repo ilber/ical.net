@@ -161,25 +161,5 @@ namespace Ical.Net.UnitTests
 
             Assert.AreEqual(dateTimes1.Length, occurrences.Count, "There should be exactly " + dateTimes1.Length + " occurrences; there were " + occurrences.Count);
         }
-
-        [Test]
-        public void SystemTimeZone3()
-        {
-            // Per Jon Udell's test, we should be able to get all 
-            // system time zones on the machine and ensure they
-            // are properly translated.
-            var zones = TimeZoneInfo.GetSystemTimeZones();
-            foreach (var zone in zones)
-            {
-                try
-                {
-                    TimeZoneInfo.FindSystemTimeZoneById(zone.Id);                    
-                }
-                catch (Exception)
-                {
-                    Assert.Fail("Not found: " + zone.StandardName);                    
-                }
-            }
-        }
     }
 }

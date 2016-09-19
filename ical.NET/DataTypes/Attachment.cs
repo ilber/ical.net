@@ -41,7 +41,7 @@ namespace Ical.Net.DataTypes
             set { Parameters.Set("FMTTYPE", value); }
         }
 
-        public Attachment() {}
+        public Attachment() { }
 
         public Attachment(byte[] value) : this()
         {
@@ -67,7 +67,7 @@ namespace Ical.Net.DataTypes
         {
             return Data == null
                 ? string.Empty
-                : ValueEncoding.GetString(Data);
+                : ValueEncoding.GetString(Data, 0, Data.Length);
         }
 
         //ToDo: See if this can be deleted
@@ -86,7 +86,7 @@ namespace Ical.Net.DataTypes
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != GetType()) return false;
-            return Equals((Attachment) obj);
+            return Equals((Attachment)obj);
         }
 
         public override int GetHashCode()

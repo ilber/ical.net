@@ -141,7 +141,7 @@ namespace Ical.Net.UnitTests
                 .Events
                 .First()
                 .Attachments
-                .Select(a => Encoding.UTF8.GetString(a.Data))
+                .Select(a => Encoding.UTF8.GetString(a.Data, 0, a.Data.Length))
                 .First();
 
             Assert.AreEqual(expectedAttachment, unserializedAttachment);

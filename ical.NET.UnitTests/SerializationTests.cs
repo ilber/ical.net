@@ -13,6 +13,8 @@ using Ical.Net.Interfaces.DataTypes;
 using Ical.Net.Serialization;
 using Ical.Net.Serialization.iCalendar.Serializers;
 using Ical.Net.Serialization.iCalendar.Serializers.Other;
+using Ical.Net.Utility;
+using NodaTime;
 using NUnit.Framework;
 
 namespace Ical.Net.UnitTests
@@ -50,11 +52,11 @@ namespace Ical.Net.UnitTests
                         Assert.AreEqual(p1, p2, "The properties '" + p1.Name + "' are not equal.");
                         if (p1.Value is IComparable)
                         {
-                            Assert.AreEqual(0, ((IComparable) p1.Value).CompareTo(p2.Value), "The '" + p1.Name + "' property values do not match.");
+                            Assert.AreEqual(0, ((IComparable)p1.Value).CompareTo(p2.Value), "The '" + p1.Name + "' property values do not match.");
                         }
                         else if (p1.Value is IEnumerable)
                         {
-                            CompareEnumerables((IEnumerable) p1.Value, (IEnumerable) p2.Value, p1.Name);
+                            CompareEnumerables((IEnumerable)p1.Value, (IEnumerable)p2.Value, p1.Name);
                         }
                         else
                         {
@@ -150,7 +152,7 @@ namespace Ical.Net.UnitTests
             Assert.IsTrue(match.Success, $"could not find a(n) '{name}' with value '{value}'");
             return match.Groups[1].Value.Length == 0
                 ? new Dictionary<string, string>()
-                : match.Groups[1].Value.Substring(1).Split(';').Select(v=>v.Split('=')).ToDictionary(v=>v[0], v=>v.Length>1 ? v[1] : null);
+                : match.Groups[1].Value.Substring(1).Split(';').Select(v => v.Split('=')).ToDictionary(v => v[0], v => v.Length > 1 ? v[1] : null);
         }
         #endregion //helperMethods
 
@@ -158,6 +160,8 @@ namespace Ical.Net.UnitTests
         [Test, Category("Serialization"), Ignore("TODO: standard time, for NZ standard time (current example)")]
         public void TimeZoneSerialize()
         {
+            var start = new DateTime(2016, 7, 14);
+            var end = start.AddDays(1);
             //ToDo: This test is broken as of 2016-07-13
             var cal = new Calendar
             {
@@ -166,33 +170,33 @@ namespace Ical.Net.UnitTests
             };
 
             const string exampleTz = "New Zealand Standard Time";
-            var tzi = TimeZoneInfo.FindSystemTimeZoneById(exampleTz);
-            var timezone = VTimeZone.FromSystemTimeZone(tzi);
+            var tzi = DateUtil.GetZone(exampleTz);
+            var timezone = new VTimeZone(exampleTz);
             cal.AddTimeZone(timezone);
             var evt = new Event
             {
                 Summary = "Testing",
-                Start = new CalDateTime(2016, 7, 14, timezone.TzId),
-                End = new CalDateTime(2016, 7, 15, timezone.TzId)
+                Start = new CalDateTime(start, timezone.TzId),
+                End = new CalDateTime(end, timezone.TzId)
             };
             cal.Events.Add(evt);
 
             var serializer = new CalendarSerializer();
             var serializedCalendar = serializer.SerializeToString(cal);
 
-            Console.Write(serializedCalendar);
+            var vTimezone = InspectSerializedSection(serializedCalendar, "VTIMEZONE", new[] { "TZID:" + timezone.TzId });
 
-            var vTimezone = InspectSerializedSection(serializedCalendar, "VTIMEZONE", new[] {"TZID:" + timezone.TzId});
-            var o = tzi.BaseUtcOffset.ToString("hhmm", CultureInfo.InvariantCulture);
+            var zonedStart = tzi.AtLeniently(LocalDateTime.FromDateTime(start));
 
-            InspectSerializedSection(vTimezone, "STANDARD", new[] {"TZNAME:" + tzi.StandardName, "TZOFFSETTO:" + o
+            var o = zonedStart.Offset.ToString("m", CultureInfo.InvariantCulture);
+
+            InspectSerializedSection(vTimezone, "STANDARD", new[] {"TZNAME:" + tzi.Id, "TZOFFSETTO:" + o
                 //"DTSTART:20150402T030000",
                 //"RRULE:FREQ=YEARLY;BYDAY=1SU;BYHOUR=3;BYMINUTE=0;BYMONTH=4",
                 //"TZOFFSETFROM:+1300"
             });
 
-
-            InspectSerializedSection(vTimezone, "DAYLIGHT", new[] {"TZNAME:" + tzi.DaylightName, "TZOFFSETFROM:" + o});
+            InspectSerializedSection(vTimezone, "DAYLIGHT", new[] { "TZNAME:" + tzi.Id, "TZOFFSETFROM:" + o });
         }
         [Test, Category("Serialization")]
         public void SerializeDeserialize()
@@ -261,11 +265,10 @@ namespace Ical.Net.UnitTests
             var serializer = new CalendarSerializer();
             var serializedCalendar = serializer.SerializeToString(cal);
 
-            Console.Write(serializedCalendar);
             Assert.IsTrue(serializedCalendar.StartsWith("BEGIN:VCALENDAR"));
             Assert.IsTrue(serializedCalendar.EndsWith("END:VCALENDAR" + SerializationConstants.LineBreak));
 
-            var expectProperties = new[] {"METHOD:PUBLISH", "VERSION:2.0"};
+            var expectProperties = new[] { "METHOD:PUBLISH", "VERSION:2.0" };
 
             foreach (var p in expectProperties)
             {
@@ -299,7 +302,7 @@ namespace Ical.Net.UnitTests
                 Rsvp = true,
                 ParticipationStatus = EventParticipationStatus.Accepted
             }
-        }.AsReadOnly();
+        };
 
         [Test, Category("Serialization")]
         public void AttendeesSerialized()
@@ -321,9 +324,7 @@ namespace Ical.Net.UnitTests
             var serializer = new CalendarSerializer();
             var serializedCalendar = serializer.SerializeToString(cal);
 
-            Console.Write(serializedCalendar);
-
-            var vEvt = InspectSerializedSection(serializedCalendar, "VEVENT", new[] {"ORGANIZER:" + org});
+            var vEvt = InspectSerializedSection(serializedCalendar, "VEVENT", new[] { "ORGANIZER:" + org });
 
             foreach (var a in evt.Attendees)
             {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Ical.Net.Interfaces.General;
 using Ical.Net.Interfaces.Serialization;
@@ -16,7 +17,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers
 
         public GenericListSerializer(Type objectType)
         {
-            _innerType = objectType.GetGenericArguments()[0];
+            _innerType = objectType.GenericTypeArguments.First();
 
             var listDef = typeof (List<>);
             _objectType = listDef.MakeGenericType(typeof (object));
@@ -62,7 +63,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers
             // FIXME: cache this
             if (_addMethodInfo == null)
             {
-                _addMethodInfo = _objectType.GetMethod("Add");
+                _addMethodInfo = _objectType.GetMethod("Add", new []{typeof(void)});
             }
 
             // Determine if the returned object is an IList<ObjectType>, rather than just an ObjectType.
