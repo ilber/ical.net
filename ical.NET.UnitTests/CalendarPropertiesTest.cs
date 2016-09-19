@@ -27,7 +27,6 @@ namespace Ical.Net.UnitTests
 
             var result = serializer.SerializeToString(iCal);
 
-            Console.WriteLine(result);
             var lines = result.Split(new [] { "\r\n" }, StringSplitOptions.None);
             var propLine = lines.FirstOrDefault(x => x.StartsWith("X-WR-CALNAME:"));
             Assert.AreEqual($"{propName}:{propValue}", propLine);

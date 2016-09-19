@@ -249,16 +249,16 @@ namespace Ical.Net
             return (Status != EventStatus.Cancelled);
         }
 
-        protected override bool EvaluationIncludesReferenceDate => true;
+        public override bool EvaluationIncludesReferenceDate => true;
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 
             Initialize();
         }
 
-        protected override void OnDeserialized(StreamingContext context)
+        public override void OnDeserialized(StreamingContext context)
         {
             base.OnDeserialized(context);
 

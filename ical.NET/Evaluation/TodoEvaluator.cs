@@ -10,7 +10,7 @@ namespace Ical.Net.Evaluation
 {
     public class TodoEvaluator : RecurringEvaluator
     {
-        protected ITodo Todo => Recurrable as ITodo;
+        public ITodo Todo => Recurrable as ITodo;
 
         public TodoEvaluator(ITodo todo) : base(todo) {}
 

@@ -25,7 +25,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers
 
         public virtual string SerializeToString() => SerializeToString(_calendar);
 
-        protected override IComparer<ICalendarProperty> PropertySorter => new CalendarPropertySorter();
+        public override IComparer<ICalendarProperty> PropertySorter => new CalendarPropertySorter();
 
         public override string SerializeToString(object obj)
         {

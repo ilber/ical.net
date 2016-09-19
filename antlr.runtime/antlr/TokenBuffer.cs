@@ -33,16 +33,16 @@ namespace antlr
 	public class TokenBuffer
 	{
 		// Token source
-		protected internal TokenStream input;
+		private TokenStream input;
 		
 		// Number of active markers
-		protected internal int nMarkers;
+		private int nMarkers;
 		
 		// Additional offset used when markers are active
-		protected internal int markerOffset;
+		private int markerOffset;
 		
 		// Number of calls to consume() since last LA() or LT() call
-		protected internal int numToConsume;
+		private int numToConsume;
 		
 		// Circular queue
 		internal TokenQueue queue;
@@ -61,7 +61,7 @@ namespace antlr
 		}
 		
 		/*Ensure that the token buffer is sufficiently full */
-		protected virtual void  fill(int amount)
+		public virtual void  fill(int amount)
 		{
 			syncConsume();
 			// Fill the buffer sufficiently to hold needed tokens
@@ -85,9 +85,9 @@ namespace antlr
 			fill(i);
 			return queue.elementAt(markerOffset + i - 1);
 		}
-		
-		/*Sync up deferred consumption */
-		protected virtual void  syncConsume()
+
+        /*Sync up deferred consumption */
+        internal virtual void  syncConsume()
 		{
 			while (numToConsume > 0)
 			{

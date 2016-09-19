@@ -37,25 +37,25 @@ namespace Ical.Net.Serialization.iCalendar.Factory
             {
                 ISerializer s;
 
-                if (typeof(ICalendar).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                if (typeof (ICalendar).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new CalendarSerializer();
                 }
-                else if (typeof(ICalendarComponent).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (ICalendarComponent).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
-                    s = typeof(IEvent).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo())
+                    s = typeof (IEvent).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo())
                         ? new EventSerializer()
                         : new ComponentSerializer();
                 }
-                else if (typeof(ICalendarProperty).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (ICalendarProperty).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new PropertySerializer();
                 }
-                else if (typeof(CalendarParameter).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (CalendarParameter).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new ParameterSerializer();
                 }
-                else if (typeof(string).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (string).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new StringSerializer();
                 }
@@ -70,19 +70,19 @@ namespace Ical.Net.Serialization.iCalendar.Factory
                     s = new EnumSerializer(objectType);
                 }
 #endif
-                else if (typeof(TimeSpan).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (TimeSpan).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new TimeSpanSerializer();
                 }
-                else if (typeof(int).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (int).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new IntegerSerializer();
                 }
-                else if (typeof(Uri).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (Uri).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = new UriSerializer();
                 }
-                else if (typeof(ICalendarDataType).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
+                else if (typeof (ICalendarDataType).GetTypeInfo().IsAssignableFrom(objectType.GetTypeInfo()))
                 {
                     s = _mDataTypeSerializerFactory.Build(objectType, ctx);
                 }

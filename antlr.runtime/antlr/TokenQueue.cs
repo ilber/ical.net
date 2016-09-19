@@ -19,14 +19,14 @@ namespace antlr
 
 	class TokenQueue
 	{
-		/*Physical circular buffer of tokens */
-		private IToken[] buffer;
-		/*buffer.length-1 for quick modulos */
-		private int sizeLessOne;
-		/*physical index of front token */
-		private int offset;
-		/*number of tokens in the queue */
-		protected internal int nbrEntries;
+        /*Physical circular buffer of tokens */
+        internal IToken[] buffer;
+        /*buffer.length-1 for quick modulos */
+        internal int sizeLessOne;
+        /*physical index of front token */
+        internal int offset;
+        /*number of tokens in the queue */
+        internal int nbrEntries;
 		
 		public TokenQueue(int minSize)
 		{

@@ -8,7 +8,7 @@ namespace Ical.Net.Evaluation
 {
     public class EventEvaluator : RecurringEvaluator
     {
-        protected IEvent Event
+        public IEvent Event
         {
             get { return Recurrable as IEvent; }
             set { Recurrable = value; }
@@ -43,20 +43,6 @@ namespace Ical.Net.Evaluation
                 period.Duration = Event.Duration;
                 period.EndTime = period.Duration == null ? period.StartTime : period.StartTime.Add(Event.Duration);
             }
-
-            // Ensure each period has a duration
-            //for (var i = 0; i < Periods.Count; i++)
-            //{
-            //    var p = Periods[i];
-            //    if (p.EndTime == null)
-            //    {
-            //        p.Duration = Event.Duration;
-            //        if (p.Duration != null)
-            //            p.EndTime = p.StartTime.Add(Event.Duration);
-            //        else p.EndTime = p.StartTime;
-            //    }
-            //}
-
             return Periods;
         }
     }

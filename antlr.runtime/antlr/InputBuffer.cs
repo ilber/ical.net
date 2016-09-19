@@ -37,17 +37,17 @@ namespace antlr
 	/// </remarks>
 	public abstract class InputBuffer
 	{
-		// Number of active markers
-		protected internal int nMarkers;
-		
-		// Additional offset used when markers are active
-		protected internal int markerOffset;
+        // Number of active markers
+        internal int nMarkers;
+
+        // Additional offset used when markers are active
+        internal int markerOffset;
 		
 		// Number of calls to consume() since last LA() or LT() call
-		protected internal int numToConsume;
-		
-		// Circular queue
-	    protected List<char> Buffer = new List<char>(128);
+		private int numToConsume;
+
+        // Circular queue
+        internal List<char> Buffer = new List<char>(128);
 		
 		/*This method updates the state of the input buffer so that
 		*  the text matched since the most recent mark() is no longer
@@ -135,9 +135,9 @@ namespace antlr
 			numToConsume = 0;
 			Buffer.Clear();
 		}
-		
-		/*Sync up deferred consumption */
-		protected internal virtual void  syncConsume()
+
+        /*Sync up deferred consumption */
+        internal virtual void  syncConsume()
 		{
 			if (numToConsume > 0)
 			{

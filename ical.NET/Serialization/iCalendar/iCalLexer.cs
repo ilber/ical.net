@@ -174,7 +174,7 @@ namespace Ical.Net.Serialization.iCalendar
             }
         }
 
-        protected void mCR(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mCR(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -204,7 +204,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mALPHA(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mALPHA(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -285,7 +285,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mDIGIT(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mDIGIT(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -300,7 +300,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mDASH(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mDASH(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -315,7 +315,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mUNDERSCORE(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mUNDERSCORE(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -330,7 +330,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mUNICODE(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mUNICODE(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;
@@ -345,7 +345,7 @@ namespace Ical.Net.Serialization.iCalendar
             returnToken_ = _token;
         }
 
-        protected void mSPECIAL(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
+        private void mSPECIAL(bool createToken) //throws RecognitionException, CharStreamException, TokenStreamException
         {
             IToken _token = null;
             var _begin = text.Length;

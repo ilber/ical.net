@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Security;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -17,8 +16,6 @@ using System.Security;
 // COM, set the ComVisible attribute to true on that type.
 
 [assembly: ComVisible(false)]
-//[assembly: AllowPartiallyTrustedCallers]
-//[assembly: SecurityRules(SecurityRuleSet.Level1)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 

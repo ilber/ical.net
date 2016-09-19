@@ -17,20 +17,7 @@ namespace Ical.Net.Serialization
             _mSerializationContext = ctx;
         }
 
-        //protected byte[] Decode7Bit(string value)
-        //{
-        //    try
-        //    {
-        //        var utf7 = new UTF7Encoding();
-        //        return utf7.GetBytes(value);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
-
-        protected byte[] Decode8Bit(string value)
+        public byte[] Decode8Bit(string value)
         {
             try
             {
@@ -43,7 +30,7 @@ namespace Ical.Net.Serialization
             }
         }
 
-        protected byte[] DecodeBase64(string value)
+        public byte[] DecodeBase64(string value)
         {
             try
             {
@@ -55,7 +42,7 @@ namespace Ical.Net.Serialization
             }
         }
 
-        protected virtual DecoderDelegate GetDecoderFor(string encoding)
+        public virtual DecoderDelegate GetDecoderFor(string encoding)
         {
             if (encoding == null)
             {
@@ -64,8 +51,6 @@ namespace Ical.Net.Serialization
 
             switch (encoding.ToUpper())
             {
-                //case "7BIT":
-                //    return Decode7Bit;
                 case "8BIT":
                     return Decode8Bit;
                 case "BASE64":
@@ -75,20 +60,7 @@ namespace Ical.Net.Serialization
             }
         }
 
-        //protected string Encode7Bit(byte[] data)
-        //{
-        //    try
-        //    {
-        //        var utf7 = new UTF7Encoding();
-        //        return utf7.GetString(data);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
-
-        protected string Encode8Bit(byte[] data)
+        public string Encode8Bit(byte[] data)
         {
             try
             {
@@ -101,7 +73,7 @@ namespace Ical.Net.Serialization
             }
         }
 
-        protected string EncodeBase64(byte[] data)
+        public string EncodeBase64(byte[] data)
         {
             try
             {
@@ -113,7 +85,7 @@ namespace Ical.Net.Serialization
             }
         }
 
-        protected virtual EncoderDelegate GetEncoderFor(string encoding)
+        public virtual EncoderDelegate GetEncoderFor(string encoding)
         {
             if (encoding == null)
             {
@@ -122,8 +94,6 @@ namespace Ical.Net.Serialization
 
             switch (encoding.ToUpper())
             {
-                //case "7BIT":
-                //    return Encode7Bit;
                 case "8BIT":
                     return Encode8Bit;
                 case "BASE64":
@@ -141,8 +111,6 @@ namespace Ical.Net.Serialization
             }
 
             var encoder = GetEncoderFor(encoding);
-            //var wrapped = TextUtil.FoldLines(encoder?.Invoke(data));
-            //return wrapped;
             return encoder?.Invoke(data);
         }
 
@@ -160,7 +128,7 @@ namespace Ical.Net.Serialization
             }
 
             // Decode the string into the current encoding
-            var encodingStack = _mSerializationContext.GetService(typeof(IEncodingStack)) as IEncodingStack;
+            var encodingStack = _mSerializationContext.GetService(typeof (IEncodingStack)) as IEncodingStack;
             return encodingStack.Current.GetString(data, 0, data.Length);
         }
 

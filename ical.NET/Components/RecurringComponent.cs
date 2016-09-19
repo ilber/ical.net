@@ -29,7 +29,7 @@ namespace Ical.Net
 
         public static IEnumerable<TRecurringComponent> SortByDate<TRecurringComponent>(IEnumerable<TRecurringComponent> list) => list.OrderBy(d => d);
 
-        protected virtual bool EvaluationIncludesReferenceDate => false;
+        public virtual bool EvaluationIncludesReferenceDate => false;
 
         public virtual IList<IAttachment> Attachments
         {
@@ -175,7 +175,7 @@ namespace Ical.Net
             }
         }
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 

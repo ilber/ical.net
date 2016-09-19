@@ -27,7 +27,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
             return Encode(sc, Escape(string.Join(".", vals)));
         }
 
-        internal static readonly Regex StatusCode = new Regex(@"\d(\.\d+)*", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+        internal static readonly Regex StatusCode = new Regex(@"\d(\.\d+)*", /*RegexOptions.Compiled |*/ RegexOptions.CultureInvariant);
 
         public override object Deserialize(TextReader tr)
         {

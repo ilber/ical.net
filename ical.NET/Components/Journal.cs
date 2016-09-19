@@ -19,9 +19,9 @@ namespace Ical.Net
             Name = Components.Journal;
         }
 
-        protected override bool EvaluationIncludesReferenceDate => true;
+        public override bool EvaluationIncludesReferenceDate => true;
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 

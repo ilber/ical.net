@@ -190,9 +190,9 @@ namespace Ical.Net
             return Status == TodoStatus.Cancelled;
         }
 
-        protected override bool EvaluationIncludesReferenceDate => true;
+        public override bool EvaluationIncludesReferenceDate => true;
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             //ToDo: a necessary evil, for now
             base.OnDeserializing(context);

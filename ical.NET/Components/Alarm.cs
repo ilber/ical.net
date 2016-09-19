@@ -60,7 +60,7 @@ namespace Ical.Net
             set { Properties.Set("TRIGGER", value); }
         }
 
-        protected virtual IList<AlarmOccurrence> Occurrences { get; set; }
+        public virtual IList<AlarmOccurrence> Occurrences { get; set; }
 
         public Alarm()
         {
@@ -162,7 +162,7 @@ namespace Ical.Net
         /// <c>DURATION</c> properties.  Each recurrence of the alarm will
         /// have its own set of generated repetitions.
         /// </summary>
-        protected virtual void AddRepeatedItems()
+        public virtual void AddRepeatedItems()
         {
             var len = Occurrences.Count;
             for (var i = 0; i < len; i++)

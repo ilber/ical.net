@@ -17,21 +17,21 @@ namespace Ical.Net.Evaluation
         private ICalendarObject _mAssociatedObject;
         private readonly ICalendarDataType _mAssociatedDataType;
 
-        protected HashSet<IPeriod> MPeriods;
+        private HashSet<IPeriod> _mPeriods;
 
-        protected Evaluator()
+        public Evaluator()
         {
             Initialize();
         }
 
-        protected Evaluator(ICalendarObject associatedObject)
+        public Evaluator(ICalendarObject associatedObject)
         {
             _mAssociatedObject = associatedObject;
 
             Initialize();
         }
 
-        protected Evaluator(ICalendarDataType dataType)
+        public Evaluator(ICalendarDataType dataType)
         {
             _mAssociatedDataType = dataType;
 
@@ -41,17 +41,17 @@ namespace Ical.Net.Evaluation
         private void Initialize()
         {
             Calendar = CultureInfo.CurrentCulture.Calendar;
-            MPeriods = new HashSet<IPeriod>();
+            _mPeriods = new HashSet<IPeriod>();
         }
 
-        protected IDateTime ConvertToIDateTime(DateTime dt, IDateTime referenceDate)
+        public IDateTime ConvertToIDateTime(DateTime dt, IDateTime referenceDate)
         {
             IDateTime newDt = new CalDateTime(dt, referenceDate.TzId);
             newDt.AssociateWith(referenceDate);
             return newDt;
         }
 
-        protected void IncrementDate(ref DateTime dt, IRecurrencePattern pattern, int interval)
+        public void IncrementDate(ref DateTime dt, IRecurrencePattern pattern, int interval)
         {
             // FIXME: use a more specific exception.
             if (interval == 0)
@@ -109,16 +109,16 @@ namespace Ical.Net.Evaluation
             {
                 return _mAssociatedObject ?? _mAssociatedDataType?.AssociatedObject;
             }
-            protected set { _mAssociatedObject = value; }
+            set { _mAssociatedObject = value; }
         }
 
-        public virtual HashSet<IPeriod> Periods => MPeriods;
+        public virtual HashSet<IPeriod> Periods => _mPeriods;
 
         public virtual void Clear()
         {
             _mEvaluationStartBounds = DateTime.MaxValue;
             _mEvaluationEndBounds = DateTime.MinValue;
-            MPeriods.Clear();
+            _mPeriods.Clear();
         }
 
         public abstract HashSet<IPeriod> Evaluate(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd, bool includeReferenceDateInResults);

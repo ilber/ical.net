@@ -7,11 +7,11 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
 {
     public abstract class DataTypeSerializer : SerializerBase
     {
-        protected DataTypeSerializer() {}
+        public DataTypeSerializer() {}
 
-        protected DataTypeSerializer(ISerializationContext ctx) : base(ctx) {}
+        public DataTypeSerializer(ISerializationContext ctx) : base(ctx) {}
 
-        protected virtual ICalendarDataType CreateAndAssociate()
+        public virtual ICalendarDataType CreateAndAssociate()
         {
             // Create an instance of the object
             var dt = Activator.CreateInstance(TargetType) as ICalendarDataType;

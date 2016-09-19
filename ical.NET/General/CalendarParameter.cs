@@ -43,7 +43,7 @@ namespace Ical.Net.General
             _values = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         }
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 

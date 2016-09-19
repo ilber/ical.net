@@ -63,7 +63,8 @@ namespace Ical.Net.Serialization.iCalendar.Serializers
             // FIXME: cache this
             if (_addMethodInfo == null)
             {
-                _addMethodInfo = _objectType.GetMethod("Add", new []{typeof(void)});
+                //_addMethodInfo = _objectType.GetMethod("Add");
+                _addMethodInfo = _objectType.GetRuntimeMethod("Add", new[] {typeof(void)});
             }
 
             // Determine if the returned object is an IList<ObjectType>, rather than just an ObjectType.

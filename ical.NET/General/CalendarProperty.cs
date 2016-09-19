@@ -33,7 +33,7 @@ namespace Ical.Net.General
         /// <summary>
         /// Returns a list of parameters that are associated with the iCalendar object.
         /// </summary>
-        public virtual IParameterCollection Parameters { get; protected set; } = new ParameterList();
+        public virtual IParameterCollection Parameters { get; set; } = new ParameterList();
 
         public CalendarProperty() {}
 

@@ -20,9 +20,9 @@ namespace antlr
 		public static readonly CommonTokenCreator Creator = new CommonTokenCreator();
 
 		// most tokens will want line and text information
-		protected internal int line;
-		protected internal string text;
-		protected internal int col;
+		private int line;
+		private string text;
+		private int col;
 		
 		public CommonToken()
 		{

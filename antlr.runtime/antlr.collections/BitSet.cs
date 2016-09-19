@@ -37,17 +37,17 @@ namespace antlr.collections
 
     public class BitSet
     {
-        protected internal const int BITS = 64; // number of bits / long
-        protected internal const int LOG_BITS = 6; // 2^6 == 64
+        private const int BITS = 64; // number of bits / long
+        private const int LOG_BITS = 6; // 2^6 == 64
 
         /*We will often need to do a mod operator (i mod nbits).  Its
         * turns out that, for powers of two, this mod operation is
         * same as (i & (nbits-1)).  Since mod is slow, we use a
         * precomputed mod mask to do the mod instead.
         */
-        protected internal static readonly int MOD_MASK = BITS - 1;
+        private static readonly int MOD_MASK = BITS - 1;
 
-        protected internal long[] dataBits;
+        private long[] dataBits;
 
         /*Construction from a static array of longs */
         public BitSet(long[] bits_)
@@ -96,7 +96,7 @@ namespace antlr.collections
             return deg;
         }
 
-        protected bool Equals(BitSet other)
+        private bool Equals(BitSet other)
         {
             return dataBits.SequenceEqual(other.dataBits);
         }

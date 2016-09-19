@@ -27,9 +27,9 @@ namespace antlr
 		public const int INVALID_TYPE = 0;
 		public const int EOF_TYPE = 1;
 		public static readonly int SKIP = - 1;
-		
-		// each Token has at least a token type
-		protected int type_;
+
+        // each Token has at least a token type
+        internal int type_;
 		
 		// the illegal token object
 		public static Token badToken = new Token(INVALID_TYPE, "<no text>");

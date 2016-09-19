@@ -9,7 +9,7 @@ namespace Ical.Net.General.Proxies
 {
     public class ParameterCollectionProxy : GroupedCollectionProxy<string, CalendarParameter, CalendarParameter>, IParameterCollection
     {
-        protected GroupedValueList<string, CalendarParameter, CalendarParameter, string> Parameters
+        public GroupedValueList<string, CalendarParameter, CalendarParameter, string> Parameters
             => RealObject as GroupedValueList<string, CalendarParameter, CalendarParameter, string>;
 
         public ParameterCollectionProxy(IGroupedList<string, CalendarParameter> realObject) : base(realObject) {}

@@ -13,7 +13,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.Components
 {
     public class ComponentSerializer : SerializerBase
     {
-        protected virtual IComparer<ICalendarProperty> PropertySorter => new PropertyAlphabetizer();
+        public virtual IComparer<ICalendarProperty> PropertySorter => new PropertyAlphabetizer();
 
         public ComponentSerializer() { }
 

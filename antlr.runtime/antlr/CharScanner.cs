@@ -42,34 +42,34 @@ namespace antlr
         internal static readonly object SynPredFailedEventKey = new object();
         internal static readonly object SynPredSucceededEventKey = new object();
 
-        protected internal StringBuilder text;				// text of current token
+        public StringBuilder text;				// text of current token
 
-        protected bool saveConsumedInput = true;	// does consume() save characters?
+        private bool saveConsumedInput = true;	// does consume() save characters?
 
         /// <summary>Used for creating Token instances.</summary>
-        protected TokenCreator tokenCreator;
+        private TokenCreator tokenCreator;
 
         /// <summary>Used for caching lookahead characters.</summary>
-        protected char cached_LA1;
-        protected char cached_LA2;
+        public char cached_LA1;
+        public char cached_LA2;
 
         /*Tab chars are handled by tab() according to this value; override
         *  method to do anything weird with tabs.
         */
-        protected internal int tabsize = 8;
+        private int tabsize = 8;
 
-        protected internal IToken returnToken_ = null; // used to return tokens w/o using return val.
+        public IToken returnToken_ = null; // used to return tokens w/o using return val.
 
-        protected internal LexerSharedInputState inputState;
+        private LexerSharedInputState inputState;
 
         /*Used during filter mode to indicate that path is desired.
         *  A subsequent scan error will report an error as usual if
         *  acceptPath=true;
         */
-        protected internal bool commitToPath = false;
+        private bool commitToPath = false;
 
         /*Used to keep track of indentdepth for traceIn/Out */
-        protected internal int traceDepth = 0;
+        private int traceDepth = 0;
 
         public CharScanner()
         {
@@ -226,7 +226,7 @@ namespace antlr
             return inputState.input.LA(i);
         }
 
-        protected internal virtual IToken makeToken(int t)
+        public virtual IToken makeToken(int t)
         {
             IToken newToken = null;
             bool typeCreated;
@@ -376,7 +376,7 @@ namespace antlr
         /*Parser error-reporting function can be overridden in subclass */
         public virtual void reportError(RecognitionException ex)
         {
-            Console.Error.WriteLine(ex);
+            //Console.Error.WriteLine(ex);
         }
 
         /*Parser error-reporting function can be overridden in subclass */
@@ -384,11 +384,11 @@ namespace antlr
         {
             if (getFilename() == null)
             {
-                Console.Error.WriteLine("error: " + s);
+                //Console.Error.WriteLine("error: " + s);
             }
             else
             {
-                Console.Error.WriteLine(getFilename() + ": error: " + s);
+                //Console.Error.WriteLine(getFilename() + ": error: " + s);
             }
         }
 
@@ -397,11 +397,11 @@ namespace antlr
         {
             if (getFilename() == null)
             {
-                Console.Error.WriteLine("warning: " + s);
+                //Console.Error.WriteLine("warning: " + s);
             }
             else
             {
-                Console.Error.WriteLine(getFilename() + ": warning: " + s);
+                //Console.Error.WriteLine(getFilename() + ": warning: " + s);
             }
         }
 

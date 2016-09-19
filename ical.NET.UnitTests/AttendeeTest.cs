@@ -1,8 +1,6 @@
 using Ical.Net.DataTypes;
-using Ical.Net.Serialization;
 using Ical.Net.Serialization.iCalendar.Serializers;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,7 +37,7 @@ namespace Ical.Net.UnitTests
             }
         };
 
-
+        
         /// <summary>
         /// Ensures that attendees can be properly added to an event.
         /// </summary>
@@ -53,7 +51,7 @@ namespace Ical.Net.UnitTests
             Assert.AreEqual(1, evt.Attendees.Count);
 
             //the properties below had been set to null during the Attendees.Add operation in NuGet version 2.1.4
-            Assert.AreEqual(ParticipationRole.RequiredParticipant, evt.Attendees[0].Role);
+            Assert.AreEqual(ParticipationRole.RequiredParticipant, evt.Attendees[0].Role); 
             Assert.AreEqual(EventParticipationStatus.Tentative, evt.Attendees[0].ParticipationStatus);
         }
 

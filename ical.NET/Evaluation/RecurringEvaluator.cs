@@ -10,7 +10,7 @@ namespace Ical.Net.Evaluation
 {
     public class RecurringEvaluator : Evaluator
     {
-        protected IRecurrable Recurrable { get; set; }
+        public IRecurrable Recurrable { get; set; }
 
         public RecurringEvaluator(IRecurrable obj)
         {
@@ -37,7 +37,7 @@ namespace Ical.Net.Evaluation
         /// <param name="periodStart">The beginning date of the range to evaluate.</param>
         /// <param name="periodEnd">The end date of the range to evaluate.</param>
         /// <param name="includeReferenceDateInResults"></param>
-        protected HashSet<IPeriod> EvaluateRRule(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd, bool includeReferenceDateInResults)
+        private HashSet<IPeriod> EvaluateRRule(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd, bool includeReferenceDateInResults)
         {
             if (Recurrable.RecurrenceRules == null || !Recurrable.RecurrenceRules.Any())
             {
@@ -59,7 +59,7 @@ namespace Ical.Net.Evaluation
         }
 
         /// <summary> Evalates the RDate component, and adds each specified DateTime or Period to the Periods collection. </summary>
-        protected HashSet<IPeriod> EvaluateRDate(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
+        private HashSet<IPeriod> EvaluateRDate(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
         {
             if (Recurrable.RecurrenceDates == null || !Recurrable.RecurrenceDates.Any())
             {
@@ -76,7 +76,7 @@ namespace Ical.Net.Evaluation
         /// <param name="referenceDate"></param>
         /// <param name="periodStart">The beginning date of the range to evaluate.</param>
         /// <param name="periodEnd">The end date of the range to evaluate.</param>
-        protected HashSet<IPeriod> EvaluateExRule(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
+        private HashSet<IPeriod> EvaluateExRule(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
         {
             if (Recurrable.ExceptionRules == null || !Recurrable.ExceptionRules.Any())
             {
@@ -100,7 +100,7 @@ namespace Ical.Net.Evaluation
         /// <param name="referenceDate"></param>
         /// <param name="periodStart">The beginning date of the range to evaluate.</param>
         /// <param name="periodEnd">The end date of the range to evaluate.</param>
-        protected HashSet<IPeriod> EvaluateExDate(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
+        private HashSet<IPeriod> EvaluateExDate(IDateTime referenceDate, DateTime periodStart, DateTime periodEnd)
         {
             if (Recurrable.ExceptionDates == null || !Recurrable.ExceptionDates.Any())
             {

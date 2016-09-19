@@ -23,10 +23,10 @@ namespace antlr
 
 	public class ParserSharedInputState
 	{
-		/*Where to get token objects */
-		protected internal TokenBuffer input;
-		
-		/*What file (if known) caused the problem? */
-		protected internal string filename;
+        /*Where to get token objects */
+        internal TokenBuffer input;
+
+        /*What file (if known) caused the problem? */
+        internal string filename;
 	}
 }

@@ -18,9 +18,9 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.Other
 
         public StringSerializer(ISerializationContext ctx) : base(ctx) {}
 
-        internal static readonly Regex SingleBackslashMatch = new Regex(@"(?<!\\)\\(?!\\)", RegexOptions.Compiled);
+        internal static readonly Regex SingleBackslashMatch = new Regex(@"(?<!\\)\\(?!\\)"/*, RegexOptions.Compiled*/);
 
-        protected virtual string Unescape(string value)
+        public virtual string Unescape(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -42,7 +42,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.Other
             return value;
         }
 
-        protected virtual string Escape(string value)
+        public virtual string Escape(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -102,7 +102,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.Other
             return string.Join(",", values);
         }
 
-        internal static readonly Regex UnescapedCommas = new Regex(@"[^\\](,)", RegexOptions.Compiled);
+        internal static readonly Regex UnescapedCommas = new Regex(@"[^\\](,)"/*, RegexOptions.Compiled*/);
         public override object Deserialize(TextReader tr)
         {
             if (tr == null)

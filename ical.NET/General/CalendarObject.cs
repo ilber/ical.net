@@ -53,12 +53,12 @@ namespace Ical.Net.General
             OnDeserialized(context);
         }
 
-        protected virtual void OnDeserializing(StreamingContext context)
+        public virtual void OnDeserializing(StreamingContext context)
         {
             Initialize();
         }
 
-        protected virtual void OnDeserialized(StreamingContext context) {}
+        public virtual void OnDeserialized(StreamingContext context) {}
 
         private void _Children_ItemAdded(object sender, ObjectEventArgs<ICalendarObject, int> e)
         {
@@ -144,13 +144,13 @@ namespace Ical.Net.General
                 }
                 return null;
             }
-            protected set { }
+            set { }
         }
 
         public virtual ICalendar ICalendar
         {
             get { return Calendar; }
-            protected set { Calendar = value; }
+            set { Calendar = value; }
         }
 
         public virtual int Line { get; set; }

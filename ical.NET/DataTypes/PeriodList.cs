@@ -16,7 +16,7 @@ namespace Ical.Net.DataTypes
         public string TzId { get; set; }
         public int Count => Periods.Count;
 
-        protected IList<IPeriod> Periods { get; set; } = new List<IPeriod>(64);
+        public IList<IPeriod> Periods { get; set; } = new List<IPeriod>(64);
 
 
         public PeriodList()

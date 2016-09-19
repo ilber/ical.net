@@ -5,11 +5,11 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
 {
     public abstract class EncodableDataTypeSerializer : DataTypeSerializer
     {
-        protected EncodableDataTypeSerializer() {}
+        public EncodableDataTypeSerializer() {}
 
-        protected EncodableDataTypeSerializer(ISerializationContext ctx) : base(ctx) {}
+        public EncodableDataTypeSerializer(ISerializationContext ctx) : base(ctx) {}
 
-        protected string Encode(IEncodableDataType dt, string value)
+        public string Encode(IEncodableDataType dt, string value)
         {
             if (value == null)
             {
@@ -26,7 +26,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
             return Encode(dt, encodingStack.Current.GetBytes(value));
         }
 
-        protected string Encode(IEncodableDataType dt, byte[] data)
+        public string Encode(IEncodableDataType dt, byte[] data)
         {
             if (data == null)
             {
@@ -44,7 +44,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
             return encodingProvider?.Encode(dt.Encoding, data);
         }
 
-        protected string Decode(IEncodableDataType dt, string value)
+        public string Decode(IEncodableDataType dt, string value)
         {
             var data = DecodeData(dt, value);
             if (data == null)
@@ -57,7 +57,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
             return encodingStack.Current.GetString(data, 0, data.Length);
         }
 
-        protected byte[] DecodeData(IEncodableDataType dt, string value)
+        public byte[] DecodeData(IEncodableDataType dt, string value)
         {
             if (value == null)
             {

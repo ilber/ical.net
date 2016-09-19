@@ -24,14 +24,14 @@ namespace antlr
 	*/
 	public class LexerSharedInputState
 	{
-		protected internal int column;
-		protected internal int line;
-		protected internal int tokenStartColumn;
-		protected internal int tokenStartLine;
-		protected internal InputBuffer input;
-		
-		/*What file (if known) caused the problem? */
-		protected internal string filename;
+		internal int column;
+		internal int line;
+		internal int tokenStartColumn;
+		internal int tokenStartLine;
+        internal InputBuffer input;
+
+        /*What file (if known) caused the problem? */
+        internal string filename;
 		
 		public int guessing;
 		

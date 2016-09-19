@@ -86,7 +86,7 @@ namespace Ical.Net
             set { Properties.Set("URL", value); }
         }
 
-        protected override void OnDeserialized(StreamingContext context)
+        public override void OnDeserialized(StreamingContext context)
         {
             base.OnDeserialized(context);
 

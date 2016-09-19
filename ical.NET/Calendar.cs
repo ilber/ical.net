@@ -25,49 +25,49 @@ namespace Ical.Net
         /// </summary>
         /// <param name="filepath">The path to the file to load.</param>
         /// <returns>An <see cref="Calendar"/> object</returns>        
-        public static IICalendarCollection LoadFromFile(string filepath)
-        {
-            return LoadFromFile(filepath, Encoding.UTF8, new CalendarSerializer());
-        }
+        //public static IICalendarCollection LoadFromFile(string filepath)
+        //{
+        //    return LoadFromFile(filepath, Encoding.UTF8, new CalendarSerializer());
+        //}
 
-        public static IICalendarCollection LoadFromFile<T>(string filepath) where T : ICalendar
-        {
-            return LoadFromFile(typeof (T), filepath);
-        }
+        //public static IICalendarCollection LoadFromFile<T>(string filepath) where T : ICalendar
+        //{
+        //    return LoadFromFile(typeof (T), filepath);
+        //}
 
-        public static IICalendarCollection LoadFromFile(Type iCalendarType, string filepath)
-        {
-            ISerializer serializer = new CalendarSerializer();
-            serializer.GetService<ISerializationSettings>().CalendarType = iCalendarType;
-            return LoadFromFile(filepath, Encoding.UTF8, serializer);
-        }
+        //public static IICalendarCollection LoadFromFile(Type iCalendarType, string filepath)
+        //{
+        //    ISerializer serializer = new CalendarSerializer();
+        //    serializer.GetService<ISerializationSettings>().CalendarType = iCalendarType;
+        //    return LoadFromFile(filepath, Encoding.UTF8, serializer);
+        //}
 
-        public static IICalendarCollection LoadFromFile(string filepath, Encoding encoding)
-        {
-            return LoadFromFile(filepath, encoding, new CalendarSerializer());
-        }
+        //public static IICalendarCollection LoadFromFile(string filepath, Encoding encoding)
+        //{
+        //    return LoadFromFile(filepath, encoding, new CalendarSerializer());
+        //}
 
-        public static IICalendarCollection LoadFromFile<T>(string filepath, Encoding encoding) where T : ICalendar
-        {
-            return LoadFromFile(typeof (T), filepath, encoding);
-        }
+        //public static IICalendarCollection LoadFromFile<T>(string filepath, Encoding encoding) where T : ICalendar
+        //{
+        //    return LoadFromFile(typeof (T), filepath, encoding);
+        //}
 
-        public static IICalendarCollection LoadFromFile(Type iCalendarType, string filepath, Encoding encoding)
-        {
-            ISerializer serializer = new CalendarSerializer();
-            serializer.GetService<ISerializationSettings>().CalendarType = iCalendarType;
-            return LoadFromFile(filepath, encoding, serializer);
-        }
+        //public static IICalendarCollection LoadFromFile(Type iCalendarType, string filepath, Encoding encoding)
+        //{
+        //    ISerializer serializer = new CalendarSerializer();
+        //    serializer.GetService<ISerializationSettings>().CalendarType = iCalendarType;
+        //    return LoadFromFile(filepath, encoding, serializer);
+        //}
 
-        public static IICalendarCollection LoadFromFile(string filepath, Encoding encoding, ISerializer serializer)
-        {
-            // NOTE: Fixes bug #3211934 - Bug in iCalendar.cs - UnauthorizedAccessException
-            using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
-            {
-                var calendars = LoadFromStream(fs, encoding, serializer);
-                return calendars;
-            }
-        }
+        //public static IICalendarCollection LoadFromFile(string filepath, Encoding encoding, ISerializer serializer)
+        //{
+        //    // NOTE: Fixes bug #3211934 - Bug in iCalendar.cs - UnauthorizedAccessException
+        //    using (var fs = new FileStream(filepath, FileMode.Open, FileAccess.Read))
+        //    {
+        //        var calendars = LoadFromStream(fs, encoding, serializer);
+        //        return calendars;
+        //    }
+        //}
 
         /// <summary>
         /// Loads an <see cref="Calendar"/> from an open stream.
@@ -170,7 +170,7 @@ namespace Ical.Net
             _mTimeZones = new CalendarObjectListProxy<ITimeZone>(Children);
         }
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 

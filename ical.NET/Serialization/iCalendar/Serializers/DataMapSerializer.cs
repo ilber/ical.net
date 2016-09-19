@@ -12,7 +12,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers
 
         public DataMapSerializer(ISerializationContext ctx) : base(ctx) {}
 
-        protected IStringSerializer GetMappedSerializer()
+        public IStringSerializer GetMappedSerializer()
         {
             var sf = GetService<ISerializerFactory>();
             var mapper = GetService<IDataTypeMapper>();

@@ -41,7 +41,6 @@ namespace Ical.Net.General
 
         public virtual bool IsLoaded => _mIsLoaded;
 
-        [field: NonSerialized]
         public event EventHandler Loaded;
 
         public virtual void OnLoaded()

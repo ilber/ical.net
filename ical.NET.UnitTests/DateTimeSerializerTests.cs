@@ -10,7 +10,7 @@ namespace Ical.Net.UnitTests.Serialization.iCalendar.Serializers.DataTypes
     public class DateTimeSerializerTests
     {
         [Test, Category("Deserialization")]
-        public void TZIDPropertyMustNotBeAppliedToUtcDateTime()
+        public void TzidPropertyMustNotBeAppliedToUtcDateTime()
         {
             var ical = new Ical.Net.Calendar();
             var evt = new Ical.Net.Event();

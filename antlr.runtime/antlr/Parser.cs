@@ -37,10 +37,10 @@ namespace antlr
 	    internal static readonly object SynPredFailedEventKey = new object();
 	    internal static readonly object SynPredSucceededEventKey = new object();
 
-		protected internal ParserSharedInputState inputState = new ParserSharedInputState();
+        internal ParserSharedInputState inputState = new ParserSharedInputState();
 
         /*Table of token type to token names */
-        protected internal string[] tokenNames;
+        public string[] tokenNames;
 		
 		/*Get another token object from the token stream */
 		public abstract void  consume();

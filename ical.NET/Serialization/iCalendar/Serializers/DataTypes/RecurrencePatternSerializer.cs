@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using Ical.Net.DataTypes;
 using Ical.Net.ExtensionMethods;
@@ -35,7 +36,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
             throw new ArgumentException(value + " is not a valid iCal day-of-week indicator.");
         }
 
-        protected static void AddInt32Values(IList<int> list, string value)
+        private static void AddInt32Values(IList<int> list, string value)
         {
             var values = value.Split(',');
             foreach (var v in values)
@@ -79,8 +80,8 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
 
             var t1 = obj1.GetType();
 
-            var fi1 = t1.GetField("MinValue");
-            var fi2 = t1.GetField("MinValue");
+            var fi1 = t1.GetTypeInfo().GetDeclaredField("MinValue");
+            var fi2 = t1.GetTypeInfo().GetDeclaredField("MinValue");
 
             var isMin1 = fi1 != null && obj1.Equals(fi1.GetValue(null));
             var isMin2 = fi2 != null && obj2.Equals(fi2.GetValue(null));
@@ -187,7 +188,7 @@ namespace Ical.Net.Serialization.iCalendar.Serializers.DataTypes
         }
 
         //Compiling these is a one-time penalty of about 80ms
-        private const RegexOptions _ciCompiled = RegexOptions.IgnoreCase | RegexOptions.Compiled;
+        private const RegexOptions _ciCompiled = RegexOptions.IgnoreCase /*| RegexOptions.Compiled*/;
 
         internal static readonly Regex OtherInterval =
             new Regex(@"every\s+(?<Interval>other|\d+)?\w{0,2}\s*(?<Freq>second|minute|hour|day|week|month|year)s?,?\s*(?<More>.+)", _ciCompiled);

@@ -61,7 +61,7 @@ namespace Ical.Net.Serialization
             AddPropertyMapping("URL", typeof (Uri), false);
         }
 
-        protected Type ResolveStatusProperty(object context)
+        public Type ResolveStatusProperty(object context)
         {
             var obj = context as ICalendarObject;
             if (obj != null)

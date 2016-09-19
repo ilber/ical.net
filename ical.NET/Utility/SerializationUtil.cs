@@ -25,7 +25,7 @@ namespace Ical.Net.Utility
             }
         }
 
-        private const BindingFlags _bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+        //private const BindingFlags _bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
 
         private static readonly ConcurrentDictionary<Type, List<MethodInfo>> _onDeserializingMethods = new ConcurrentDictionary<Type, List<MethodInfo>>();
         private static List<MethodInfo> GetDeserializingMethods(Type targetType)
@@ -41,9 +41,9 @@ namespace Ical.Net.Utility
             }
 
             return _onDeserializingMethods.GetOrAdd(targetType, tt => tt
-                .GetMethods(_bindingFlags)
+                .GetRuntimeMethods()
                 .Where(targetTypeMethodInfo => targetTypeMethodInfo
-                    .GetCustomAttributes(typeof(OnDeserializingAttribute), false).Any())
+                    .GetCustomAttributes<OnDeserializingAttribute>().Any())
                 .ToList());
         }
 
@@ -60,11 +60,11 @@ namespace Ical.Net.Utility
                 return methodInfos;
             }
 
-            methodInfos = targetType.GetMethods(_bindingFlags)
+            methodInfos = targetType.GetRuntimeMethods()
                 .Select(targetTypeMethodInfo => new
                 {
                     targetTypeMethodInfo,
-                    attrs = targetTypeMethodInfo.GetCustomAttributes(typeof(OnDeserializedAttribute), false).ToList()
+                    attrs = targetTypeMethodInfo.GetCustomAttributes<OnDeserializedAttribute>().ToList()
                 })
                 .Where(t => t.attrs.Count > 0)
                 .Select(t => t.targetTypeMethodInfo)

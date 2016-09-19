@@ -56,20 +56,20 @@ namespace Ical.Net.Serialization.iCalendar
         public const int LINEFOLDER = 31;
 
 
-        protected void initialize()
+        private void initialize()
         {
             tokenNames = tokenNames_;
         }
 
 
-        protected iCalParser(TokenBuffer tokenBuf, int k) : base(tokenBuf, k)
+        public iCalParser(TokenBuffer tokenBuf, int k) : base(tokenBuf, k)
         {
             initialize();
         }
 
         public iCalParser(TokenBuffer tokenBuf) : this(tokenBuf, 3) {}
 
-        protected iCalParser(TokenStream lexer, int k) : base(lexer, k)
+        public iCalParser(TokenStream lexer, int k) : base(lexer, k)
         {
             initialize();
         }
@@ -297,6 +297,7 @@ namespace Ical.Net.Serialization.iCalendar
                 // of concrete types.
                 var targetType = dataMapSerializer.TargetType;
                 var listOfTargetType = typeof(IList<>).MakeGenericType(targetType);
+
                 if (listOfTargetType.GetTypeInfo().IsAssignableFrom(deserialized.GetType().GetTypeInfo()))
                 {
                     // We deserialized a list - add each value to the

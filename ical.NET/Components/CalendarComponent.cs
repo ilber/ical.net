@@ -49,7 +49,7 @@ namespace Ical.Net
         /// <summary>
         /// Returns a list of properties that are associated with the iCalendar object.
         /// </summary>
-        public virtual CalendarPropertyList Properties { get; protected set; }
+        public virtual CalendarPropertyList Properties { get; set; }
 
         public CalendarComponent() : base()
         {
@@ -66,7 +66,7 @@ namespace Ical.Net
             Properties = new CalendarPropertyList(this);
         }
 
-        protected override void OnDeserializing(StreamingContext context)
+        public override void OnDeserializing(StreamingContext context)
         {
             base.OnDeserializing(context);
 
