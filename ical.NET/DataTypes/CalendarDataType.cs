@@ -19,7 +19,7 @@ namespace Ical.Net.DataTypes
 
         private ICalendarObject _associatedObject;
 
-        public CalendarDataType()
+        protected CalendarDataType()
         {
             Initialize();
         }

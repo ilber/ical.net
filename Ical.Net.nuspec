@@ -15,14 +15,14 @@
     </metadata>
     <files>
         <!-- PCL profile 259 -->
-        <file src="ical.NET\bin\Release\Ical.Net.Collections.dll" target="lib\Ical.Net.Collections.dll" />
-        <file src="ical.NET\bin\Release\Ical.Net.Collections.pdb" target="lib\Ical.Net.Collections.pdb" />
-        <file src="ical.NET\bin\Release\Ical.Net.dll" target="lib\Ical.Net.dll" />
-        <file src="ical.NET\bin\Release\Ical.Net.xml" target="lib\Ical.Net.xml" />
-        <file src="ical.NET\bin\Release\Ical.Net.pdb" target="lib\Ical.Net.pdb" />
-        <file src="ical.NET\bin\Release\antlr.runtime.dll" target="lib\antlr.runtime.dll" />
-        <file src="ical.NET\bin\Release\NodaTime.dll" target="lib\NodaTime.dll" />
-        <file src="ical.NET\bin\Release\antlr.runtime.pdb" target="lib\antlr.runtime.pdb" />
-        <file src="ical.NET\bin\Release\antlr.runtime.xml" target="lib\antlr.runtime.xml" />
+        <file src="ical.NET\bin\Release\Ical.Net.Collections.dll" target="lib\portable-net45+netcore45+wpa81\Ical.Net.Collections.dll" />
+        <file src="ical.NET\bin\Release\Ical.Net.Collections.pdb" target="lib\portable-net45+netcore45+wpa81\Ical.Net.Collections.pdb" />
+        <file src="ical.NET\bin\Release\Ical.Net.dll" target="lib\portable-net45+netcore45+wpa81\Ical.Net.dll" />
+        <file src="ical.NET\bin\Release\Ical.Net.xml" target="lib\portable-net45+netcore45+wpa81\Ical.Net.xml" />
+        <file src="ical.NET\bin\Release\Ical.Net.pdb" target="lib\portable-net45+netcore45+wpa81\Ical.Net.pdb" />
+        <file src="ical.NET\bin\Release\antlr.runtime.dll" target="lib\portable-net45+netcore45+wpa81\antlr.runtime.dll" />
+        <file src="ical.NET\bin\Release\NodaTime.dll" target="lib\portable-net45+netcore45+wpa81\NodaTime.dll" />
+        <file src="ical.NET\bin\Release\antlr.runtime.pdb" target="lib\portable-net45+netcore45+wpa81\antlr.runtime.pdb" />
+        <file src="ical.NET\bin\Release\antlr.runtime.xml" target="lib\portable-net45+netcore45+wpa81\antlr.runtime.xml" />
     </files>
 </package>

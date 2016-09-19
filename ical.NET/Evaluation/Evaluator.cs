@@ -19,19 +19,19 @@ namespace Ical.Net.Evaluation
 
         private HashSet<IPeriod> _mPeriods;
 
-        public Evaluator()
+        protected Evaluator()
         {
             Initialize();
         }
 
-        public Evaluator(ICalendarObject associatedObject)
+        protected Evaluator(ICalendarObject associatedObject)
         {
             _mAssociatedObject = associatedObject;
 
             Initialize();
         }
 
-        public Evaluator(ICalendarDataType dataType)
+        protected Evaluator(ICalendarDataType dataType)
         {
             _mAssociatedDataType = dataType;
 
