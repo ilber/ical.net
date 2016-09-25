@@ -121,8 +121,8 @@ namespace ical.net.collections
 
         public virtual IEnumerable<TItem> AllOf(TGroup group)
         {
-            return _dictionary.ContainsKey(@group)
-                ? (IEnumerable<TItem>) _dictionary[@group]
+            return _dictionary.ContainsKey(group)
+                ? (IEnumerable<TItem>) _dictionary[group]
                 : new TItem[0];
         }
 
