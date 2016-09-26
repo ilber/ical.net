@@ -59,15 +59,13 @@
     <RootNamespace>Ical.Net</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="NodaTime">
+      <HintPath>..\packages\NodaTime.1.3.2\lib\net35-Client\NodaTime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Alarm.cs" />
@@ -219,7 +217,6 @@
     <Compile Include="Interfaces\General\IMergeable.cs" />
     <Compile Include="Interfaces\ICalendar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config" />
     <Compile Include="Serialization\DataTypeMapper.cs" />
     <Compile Include="Serialization\iCalendar\Serializers\DataMapSerializer.cs" />
     <Compile Include="Serialization\iCalendar\Serializers\DataTypes\DateTimeSerializer.cs" />
@@ -269,6 +266,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

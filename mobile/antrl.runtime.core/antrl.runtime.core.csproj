@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C11B2CFD-B8CD-461C-B269-20844F4DDA8C}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>antrl.runtime.core</RootNamespace>
+    <AssemblyName>antrl.runtime.core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\antlr.runtime\antlr\ANTLRException.cs">
+      <Link>antlr\ANTLRException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\ANTLRPanicException.cs">
+      <Link>antlr\ANTLRPanicException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\ByteBuffer.cs">
+      <Link>antlr\ByteBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\CharBuffer.cs">
+      <Link>antlr\CharBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\CharScanner.cs">
+      <Link>antlr\CharScanner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\CharStreamException.cs">
+      <Link>antlr\CharStreamException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\CharStreamIOException.cs">
+      <Link>antlr\CharStreamIOException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\CommonToken.cs">
+      <Link>antlr\CommonToken.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\DefaultFileLineFormatter.cs">
+      <Link>antlr\DefaultFileLineFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\FileLineFormatter.cs">
+      <Link>antlr\FileLineFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\IToken.cs">
+      <Link>antlr\IToken.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\InputBuffer.cs">
+      <Link>antlr\InputBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\LLkParser.cs">
+      <Link>antlr\LLkParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\LexerSharedInputState.cs">
+      <Link>antlr\LexerSharedInputState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\MismatchedCharException.cs">
+      <Link>antlr\MismatchedCharException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\MismatchedTokenException.cs">
+      <Link>antlr\MismatchedTokenException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\NoViableAltException.cs">
+      <Link>antlr\NoViableAltException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\NoViableAltForCharException.cs">
+      <Link>antlr\NoViableAltForCharException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\Parser.cs">
+      <Link>antlr\Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\ParserSharedInputState.cs">
+      <Link>antlr\ParserSharedInputState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\RecognitionException.cs">
+      <Link>antlr\RecognitionException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\Token.cs">
+      <Link>antlr\Token.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenBuffer.cs">
+      <Link>antlr\TokenBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenCreator.cs">
+      <Link>antlr\TokenCreator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenQueue.cs">
+      <Link>antlr\TokenQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenStream.cs">
+      <Link>antlr\TokenStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenStreamException.cs">
+      <Link>antlr\TokenStreamException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenStreamIOException.cs">
+      <Link>antlr\TokenStreamIOException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenStreamRecognitionException.cs">
+      <Link>antlr\TokenStreamRecognitionException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr\TokenStreamRetryException.cs">
+      <Link>antlr\TokenStreamRetryException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr.collections\AST.cs">
+      <Link>antlr.collections\AST.cs</Link>
+    </Compile>
+    <Compile Include="..\..\antlr.runtime\antlr.collections\BitSet.cs">
+      <Link>antlr.collections\BitSet.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
