@@ -237,6 +237,8 @@
     <Compile Include="Utility\RecurrenceUtil.cs" />
     <Compile Include="Utility\SerializationUtil.cs" />
     <Compile Include="Utility\TextUtil.cs" />
+    <Compile Include="Interfaces\DataTypes\IAlarmOccurrence.cs" />
+    <Compile Include="Interfaces\DataTypes\IOccurrence.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

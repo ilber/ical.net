@@ -506,6 +506,12 @@
     <Compile Include="..\..\ical.NET\ExtensionMethods\ListExtensions.cs">
       <Link>ExtensionMethods\ListExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IAlarmOccurrence.cs">
+      <Link>Interfaces\DataTypes\IAlarmOccurrence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IOccurrence.cs">
+      <Link>Interfaces\DataTypes\IOccurrence.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\antrl.runtime.core\antrl.runtime.core.csproj">

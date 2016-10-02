@@ -503,6 +503,12 @@
     <Compile Include="..\..\ical.NET\Constants.cs">
       <Link>Constants.cs</Link>
     </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IAlarmOccurrence.cs">
+      <Link>Interfaces\DataTypes\IAlarmOccurrence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IOccurrence.cs">
+      <Link>Interfaces\DataTypes\IOccurrence.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E115DE6-30D2-420C-BE59-6CFB877B5A72}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ical.net.core</RootNamespace>
+    <AssemblyName>ical.net.core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\ical.NET\Interfaces\ICalendar.cs">
+      <Link>Interfaces\ICalendar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\IICalendarCollection.cs">
+      <Link>Interfaces\IICalendarCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IAlarm.cs">
+      <Link>Interfaces\Components\IAlarm.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IAlarmContainer.cs">
+      <Link>Interfaces\Components\IAlarmContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\ICalendarComponent.cs">
+      <Link>Interfaces\Components\ICalendarComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IEvent.cs">
+      <Link>Interfaces\Components\IEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IFreeBusy.cs">
+      <Link>Interfaces\Components\IFreeBusy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IJournal.cs">
+      <Link>Interfaces\Components\IJournal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IRecurringComponent.cs">
+      <Link>Interfaces\Components\IRecurringComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\ITimeZone.cs">
+      <Link>Interfaces\Components\ITimeZone.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\ITodo.cs">
+      <Link>Interfaces\Components\ITodo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Components\IUniqueComponent.cs">
+      <Link>Interfaces\Components\IUniqueComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IAttachment.cs">
+      <Link>Interfaces\DataTypes\IAttachment.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IAttendee.cs">
+      <Link>Interfaces\DataTypes\IAttendee.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\ICalendarDataType.cs">
+      <Link>Interfaces\DataTypes\ICalendarDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IDateTime.cs">
+      <Link>Interfaces\DataTypes\IDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IEncodableDataType.cs">
+      <Link>Interfaces\DataTypes\IEncodableDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IFreeBusyEntry.cs">
+      <Link>Interfaces\DataTypes\IFreeBusyEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IGeographicLocation.cs">
+      <Link>Interfaces\DataTypes\IGeographicLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IOrganizer.cs">
+      <Link>Interfaces\DataTypes\IOrganizer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IPeriod.cs">
+      <Link>Interfaces\DataTypes\IPeriod.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IPeriodList.cs">
+      <Link>Interfaces\DataTypes\IPeriodList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IRecurrencePattern.cs">
+      <Link>Interfaces\DataTypes\IRecurrencePattern.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IRequestStatus.cs">
+      <Link>Interfaces\DataTypes\IRequestStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IStatusCode.cs">
+      <Link>Interfaces\DataTypes\IStatusCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\ITrigger.cs">
+      <Link>Interfaces\DataTypes\ITrigger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IUTCOffset.cs">
+      <Link>Interfaces\DataTypes\IUTCOffset.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IWeekDay.cs">
+      <Link>Interfaces\DataTypes\IWeekDay.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Evaluation\IEvaluator.cs">
+      <Link>Interfaces\Evaluation\IEvaluator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Evaluation\IGetFreeBusy.cs">
+      <Link>Interfaces\Evaluation\IGetFreeBusy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Evaluation\IGetOccurrences.cs">
+      <Link>Interfaces\Evaluation\IGetOccurrences.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Evaluation\IRecurrable.cs">
+      <Link>Interfaces\Evaluation\IRecurrable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICalendarObject.cs">
+      <Link>Interfaces\General\ICalendarObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICalendarObjectList.cs">
+      <Link>Interfaces\General\ICalendarObjectList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICalendarParameterCollectionContainer.cs">
+      <Link>Interfaces\General\ICalendarParameterCollectionContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICalendarProperty.cs">
+      <Link>Interfaces\General\ICalendarProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICalendarPropertyListContainer.cs">
+      <Link>Interfaces\General\ICalendarPropertyListContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ICopyable.cs">
+      <Link>Interfaces\General\ICopyable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\ILoadable.cs">
+      <Link>Interfaces\General\ILoadable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\IMergeable.cs">
+      <Link>Interfaces\General\IMergeable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\IParameterCollection.cs">
+      <Link>Interfaces\General\IParameterCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\IServiceProvider.cs">
+      <Link>Interfaces\General\IServiceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\General\IUniqueComponentList.cs">
+      <Link>Interfaces\General\IUniqueComponentList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\IDataTypeMapper.cs">
+      <Link>Interfaces\Serialization\IDataTypeMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\IEncodingProvider.cs">
+      <Link>Interfaces\Serialization\IEncodingProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\IEncodingStack.cs">
+      <Link>Interfaces\Serialization\IEncodingStack.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\ISerializationContext.cs">
+      <Link>Interfaces\Serialization\ISerializationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\ISerializationProcessor.cs">
+      <Link>Interfaces\Serialization\ISerializationProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\ISerializationSettings.cs">
+      <Link>Interfaces\Serialization\ISerializationSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\ISerializer.cs">
+      <Link>Interfaces\Serialization\ISerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\IStringSerializer.cs">
+      <Link>Interfaces\Serialization\IStringSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\Factory\ICalendarComponentFactory.cs">
+      <Link>Interfaces\Serialization\Factory\ICalendarComponentFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\Serialization\Factory\ISerializerFactory.cs">
+      <Link>Interfaces\Serialization\Factory\ISerializerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Constants.cs">
+      <Link>Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IAlarmOccurrence.cs">
+      <Link>Interfaces\DataTypes\IAlarmOccurrence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\Interfaces\DataTypes\IOccurrence.cs">
+      <Link>Interfaces\DataTypes\IOccurrence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\General\CalendarPropertyList.cs">
+      <Link>General\CalendarPropertyList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\General\CalendarProperty.cs">
+      <Link>General\CalendarProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\ExtensionMethods\CalendarObjectExtensions.cs">
+      <Link>ExtensionMethods\CalendarObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\ical.NET\ExtensionMethods\ListExtensions.cs">
+      <Link>ExtensionMethods\ListExtensions.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ical.Net.Collections.Core\Ical.Net.Collections.Core.csproj">
+      <Project>{0DF16C7B-6F76-43EC-839E-52FAEF3A84F9}</Project>
+      <Name>Ical.Net.Collections.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
